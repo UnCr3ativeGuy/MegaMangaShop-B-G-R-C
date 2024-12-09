@@ -2,7 +2,7 @@ package org.example.montaine.guillaume.megamangashop
 
 import kotlin.math.round
 
-data class Boutique(val Pays: String) {
+data class Boutique(val pays: String) {
 
     private var mangas = mutableMapOf<Manga, Int>()
 
