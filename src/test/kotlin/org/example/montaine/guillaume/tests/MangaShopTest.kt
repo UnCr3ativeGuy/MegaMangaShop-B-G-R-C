@@ -76,6 +76,18 @@ class MangaShopTest: BehaviorSpec({
             }
         }
     }
+    context("Je veux verifier la TVA quand le client selectionne la Belgique") {
+        given("Le client selection le pays") {
+            val ticket = TicketDeCaisse()
+
+            When("Le client selection son pays de résidence Belgique") {
+                var command = ticket.selectionPays("Belgique")
+            }
+            then("L'affichage de la TVA du pays correspondante") {
+                command shouldBe 0.17
+            }
+        }
+    }
 })
 
 
