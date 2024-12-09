@@ -20,7 +20,5 @@ fun main() {
         println("Si vous avez terminer appuez sur Q")
         exitInput = readln()
     }
-    c.addMangas("Manga2", 3.92, 42)
-    c.addMangas("Manga3", 4.10, 82)
     println(c.calculPrix())
 }
