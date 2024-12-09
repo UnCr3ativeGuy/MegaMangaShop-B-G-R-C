@@ -2,6 +2,7 @@
 package org.example.montaine.guillaume.tests
 
 import io.kotest.core.spec.style.BehaviorSpec
+import org.example.montaine.guillaume.megamangashop.TicketDeCaisse
 
 class MangaShopTest: BehaviorSpec({
     context("Je veux verifier la TVA quand le client selectionne la france") {

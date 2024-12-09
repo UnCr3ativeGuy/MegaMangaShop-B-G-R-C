@@ -18,7 +18,7 @@ data class Boutique(val Pays: String) {
 
     fun calculePrixTot(prix: Double,Pays:String,remise:Double): Double {
         var prixTot =0.0
-        var taxe: Double = when (Pays) {
+        val taxe: Double = when (Pays) {
             "France" -> 1.2
             "Espagne"-> 1.182
             "Allemagne"->1.156
@@ -27,7 +27,7 @@ data class Boutique(val Pays: String) {
             else -> 0.0
         }
 
-        prixTot= (prix*remise)*taxe
+        prixTot=(prix*remise)*taxe
         return  prixTot
     }
 }
