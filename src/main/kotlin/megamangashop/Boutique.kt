@@ -1,9 +1,8 @@
 package org.example.montaine.guillaume.megamangashop
 
-enum class Pays(){FRANCE, ESPAGNE, ROYAUME-UNI, ALLEMAGNE, BELGIQUE}
 
 data class Boutique(val Pays: String) {
-    fun selectionResidence(Pays: String) : float{
+    fun selectionResidence(Pays: String) : Float{
         return when(Pays){
             "France"->0.2
             "Espagne"->0.182
