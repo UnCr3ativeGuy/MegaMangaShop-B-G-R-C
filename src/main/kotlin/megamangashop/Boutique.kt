@@ -1,5 +1,7 @@
 package org.example.montaine.guillaume.megamangashop
 
+import kotlin.math.round
+
 data class Boutique(val Pays: String) {
 
     fun calculeRemise(prix: Double): Double {
@@ -13,11 +15,8 @@ data class Boutique(val Pays: String) {
         }
         return remise
     }
-
-
-
     fun calculePrixTot(prix: Double,Pays:String,remise:Double): Double {
-        var prixTot =0.0
+
         val taxe: Double = when (Pays) {
             "France" -> 1.2
             "Espagne"-> 1.182
@@ -26,9 +25,9 @@ data class Boutique(val Pays: String) {
             "Belgique"-> 1.17
             else -> 0.0
         }
+        val prixTot = (prix * (1 - remise / 100)) * taxe
 
-        prixTot=(prix*remise)*taxe
-        return  prixTot
+        return round(prixTot * 100) / 100
     }
 }
 
