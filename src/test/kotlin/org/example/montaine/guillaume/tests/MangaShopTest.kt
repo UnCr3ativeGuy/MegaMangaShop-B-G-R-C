@@ -3,7 +3,7 @@ package org.example.montaine.guillaume.tests
 
 import io.kotest.core.spec.style.BehaviorSpec
 
-class MontaineGuillaumeTest: BehaviorSpec({
+class MangaShopTest: BehaviorSpec({
 
     context("je veux vérifier les reductions par état et selon les montants") {
 
@@ -32,6 +32,17 @@ class MontaineGuillaumeTest: BehaviorSpec({
             }
         }
     }
+    context("Je veux verifier la TVA quand le client selectionne l'Allemagne") {
+        given("Le client selection le pays"){
+            val ticket = TicketDeCaisse()
 
+            When("Le client selection son pays de résidence Allemagne"){
+                var command = ticket.selectionPays("Allemagne")
+            }
+            then("L'affichage de la TVA du pays correspondante"){
+                command shouldBe 0.156
+            }
+        }
+    }
 
 })
