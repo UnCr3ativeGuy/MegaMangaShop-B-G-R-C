@@ -5,7 +5,21 @@ import org.example.montaine.guillaume.megamangashop.Commande
 import org.example.montaine.guillaume.megamangashop.Manga
 
 fun main() {
+    var exitInput = ""
     val c = Commande()
+    while(exitInput != "Q" || exitInput != "q") {
+        println("Entrez le nom du manga")
+        val nomInput = readln()
+        println("Entrez le prix du manga")
+        val prixInput = readln()
+        println("Entrez sa quantite")
+        val qteInput = readln()
+        val prix = prixInput.toDouble()
+        val qte = qteInput.toInt()
+        c.addMangas(nomInput, prix, qte)
+        println("Si vous avez terminer appuez sur Q")
+        exitInput = readln()
+    }
     c.addMangas("Manga2", 3.92, 42)
     c.addMangas("Manga3", 4.10, 82)
     println(c.calculPrix())
