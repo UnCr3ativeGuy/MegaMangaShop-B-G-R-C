@@ -1,23 +1,16 @@
 package org.example.montaine.guillaume.megamangashop
 
+enum class Pays(){FRANCE, ESPAGNE, ROYAUME-UNI, ALLEMAGNE, BELGIQUE}
+
 data class Boutique(val Pays: String) {
-
-    fun calculeRemise(prix: Double): Double {
-        val remise: Double =when  {
-            prix in 150.0 .. 199.0 -> 2.0
-            prix in 200.0..299.0 -> 3.0
-            prix in 300.0..499.0 -> 5.0
-            prix in 500.0..999.0 -> 7.0
-            prix > 1000.0 -> 10.0
-            else -> 0.0 // Pas de remise
+    fun selectionResidence(Pays: String) : float{
+        return when(Pays){
+            "France"->0.2
+            "Espagne"->0.182
+            "Allemagne"->0.156
+            "Royaume-Uni"-> 0.228
+            "Belgique" -> 0.17
         }
-        return remise
-    }
-
-
-
-    fun calculeTaxe(double: prix,string: Pays) {
-
     }
 }
 
