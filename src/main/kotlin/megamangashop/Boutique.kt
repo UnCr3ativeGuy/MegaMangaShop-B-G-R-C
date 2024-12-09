@@ -1,6 +1,9 @@
 package org.example.montaine.guillaume.megamangashop
 
-data class Boutique(val pays: String) {
+import kotlin.math.round
+
+data class Boutique(val Pays: String) {
+
     private var mangas = mutableMapOf<Manga, Int>()
 
     fun addMangas(nomManga:String, prixManga:Double, qte:Int) {
@@ -55,7 +58,7 @@ data class Boutique(val pays: String) {
         }
         val totalAvecRemise = total * (1 - calculeRemise(total))
         val totalTTC = calculerPrixTTC(totalAvecRemise)
-        return totalTTC
+        return round(totalTTC * 100) / 100
     }
 }
 
