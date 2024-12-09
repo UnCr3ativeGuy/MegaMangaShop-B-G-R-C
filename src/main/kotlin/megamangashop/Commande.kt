@@ -20,4 +20,12 @@ class Commande {
         assert(mangas.containsKey(manga)) {"Ce manga n'existe pas"}
         return mangas.get(manga)!!
     }
+
+    fun calculPrix(): Double {
+        var total = 0.0
+        mangas.forEach {
+            total += it.value * it.key.getPrix()
+        }
+        return total
+    }
 }
