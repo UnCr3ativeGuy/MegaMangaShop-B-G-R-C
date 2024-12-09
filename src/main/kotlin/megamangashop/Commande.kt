@@ -14,4 +14,9 @@ class Commande {
             mangas.put(manga, qte)
         }
     }
+
+    fun getQuantite(manga:String): Int {
+        assert(mangas.containsKey(manga)) {"Ce manga n'existe pas"}
+        return mangas.get(manga)!!
+    }
 }
